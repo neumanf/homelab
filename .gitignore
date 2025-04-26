@@ -1,2 +1,5 @@
 logs
 .env
+media/media
+media/torrents
+media/configs

@@ -1,0 +1,106 @@
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WEBUI_PORT=8081
+    volumes:
+      - ./configs/qbittorrent/config:/config
+      - ./torrents/complete:/mnt/arr-stack/torrents/complete
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.home.neumanf.com`)
+      - traefik.http.routers.qbittorrent.entrypoints=web
+      - traefik.http.services.qbittorrent.loadbalancer.server.port=8081
+  radarr:
+    container_name: radarr
+    image: binhex/arch-radarr
+    restart: unless-stopped
+    volumes:
+      - .:/mnt/arr-stack
+      - ./configs/radarr:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.radarr.rule=Host(`radarr.home.neumanf.com`)
+      - traefik.http.routers.radarr.entrypoints=web
+      - traefik.http.services.radarr.loadbalancer.server.port=7878
+  sonarr:
+    container_name: sonarr
+    image: binhex/arch-sonarr
+    restart: unless-stopped
+    volumes:
+      - .:/mnt/arr-stack
+      - ./configs/sonarr:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sonarr.rule=Host(`sonarr.home.neumanf.com`)
+      - traefik.http.routers.sonarr.entrypoints=web
+      - traefik.http.services.sonarr.loadbalancer.server.port=8989
+  prowlarr:
+    container_name: prowlarr
+    image: binhex/arch-prowlarr
+    restart: unless-stopped
+    volumes:
+      - ./configs/prowlarr:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.prowlarr.rule=Host(`prowlarr.home.neumanf.com`)
+      - traefik.http.routers.prowlarr.entrypoints=web
+      - traefik.http.services.prowlarr.loadbalancer.server.port=9696
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin
+    restart: unless-stopped
+    volumes:
+      - .:/mnt/arr-stack
+      - ./configs/jellyfin:/config
+      - /mnt/fastssd/jellyfin/cache:/cache
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.jellyfin.rule=Host(`jellyfin.home.neumanf.com`)
+      - traefik.http.routers.jellyfin.entrypoints=web
+      - traefik.http.services.jellyfin.loadbalancer.server.port=8096
+  jellyseerr:
+    container_name: jellyseerr
+    image: fallenbagel/jellyseerr:latest
+    restart: unless-stopped
+    environment:
+      - TZ=America/Recife
+    volumes:
+      - ./configs/jellyseerr:/app/config
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.jellyseerr.rule=Host(`jellyseerr.home.neumanf.com`)
+      - traefik.http.routers.jellyseerr.entrypoints=web
+      - traefik.http.services.jellyseerr.loadbalancer.server.port=5055
+networks:
+  traefik:
+    external: true

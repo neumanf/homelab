@@ -4,5 +4,24 @@
 
 - Files:
     - Next Cloud:
+        icon: nextcloud
         href: http://nextcloud.home.neumanf.com
-        description: File hosting
+- Media:
+    - Jellyfin:
+        icon: jellyfin
+        href: http://jellyfin.home.neumanf.com
+    - Jellyseerr:
+        icon: jellyseerr
+        href: http://jellyseerr.home.neumanf.com
+    - Sonarr:
+        icon: sonarr
+        href: http://sonarr.home.neumanf.com
+    - Radarr:
+        icon: radarr
+        href: http://radarr.home.neumanf.com
+    - Prowllar:
+        icon: prowlarr
+        href: http://prowlarr.home.neumanf.com
+    - qBittorrent:
+        icon: qbittorrent
+        href: http://qbittorrent.home.neumanf.com
