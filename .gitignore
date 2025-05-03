@@ -3,3 +3,6 @@ logs
 media/media
 media/torrents
 media/configs
+affine/config
+affine/postgres
+affine/storage

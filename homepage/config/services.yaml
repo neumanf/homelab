@@ -6,6 +6,9 @@
     - Next Cloud:
         icon: nextcloud
         href: http://nextcloud.home.neumanf.com
+    - Affine:
+        icon: affine
+        href: http://affine.home.neumanf.com
 - Media:
     - Jellyfin:
         icon: jellyfin
