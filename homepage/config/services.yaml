@@ -71,3 +71,30 @@
         icon: filebrowser
         href: http://filebrowser.home.neumanf.com
         container: filebrowser
+- Calendar:
+    - Month:
+        widget:
+          type: calendar
+          integrations: 
+            - type: sonarr
+              service_group: Media 
+              service_name: Sonarr
+              color: teal
+            - type: radarr
+              service_group: Media 
+              service_name: Radarr
+              color: blue
+- Agenda:
+    - Upcoming releases:
+        widget:
+          type: calendar
+          view: agenda
+          integrations: 
+            - type: sonarr
+              service_group: Media 
+              service_name: Sonarr
+              color: teal
+            - type: radarr
+              service_group: Media 
+              service_name: Radarr
+              color: blue
