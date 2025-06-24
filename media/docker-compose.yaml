@@ -76,9 +76,11 @@ services:
     image: jellyfin/jellyfin
     restart: unless-stopped
     volumes:
-      - .:/mnt/arr-stack
+      - .:/mnt/arr-stack:ro
       - ./configs/jellyfin:/config
       - /mnt/fastssd/jellyfin/cache:/cache
+    devices:
+      - /dev/dri:/dev/dri
     networks:
       - traefik
     labels:

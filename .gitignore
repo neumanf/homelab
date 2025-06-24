@@ -6,3 +6,6 @@ media/configs
 affine/config
 affine/postgres
 affine/storage
+homeassistant/config
+filebrowser/config
+filebrowser/database
