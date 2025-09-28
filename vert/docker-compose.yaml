@@ -1,0 +1,17 @@
+services:
+  vert:
+    container_name: vert
+    image: ghcr.io/vert-sh/vert:latest
+    environment:
+      - PORT=${PORT:-3000}
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.vert.rule=Host(`vert.home.neumanf.com`)
+      - traefik.http.routers.vert.entrypoints=web
+      - traefik.http.services.vert.loadbalancer.server.port=80
+networks:
+  traefik:
+    external: true

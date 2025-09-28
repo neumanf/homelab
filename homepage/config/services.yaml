@@ -71,6 +71,18 @@
         icon: filebrowser
         href: http://filebrowser.home.neumanf.com
         container: filebrowser
+    - File conversion:
+        icon: si-convertio
+        href: http://vert.home.neumanf.com
+        container: vert
+    - Tools:
+        icon: omni-tools 
+        href: http://omnitools.home.neumanf.com
+        container: omni-tools
+    - Adguard:
+        icon: adguard-home 
+        href: http://minipc.intelbras.local:3000
+        container: adguard 
 - Calendar:
     - Month:
         widget:
