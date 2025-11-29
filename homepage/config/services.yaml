@@ -52,11 +52,19 @@
           type: prowlarr
           url: http://prowlarr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_PROWLARR_KEY}}"
+    - Calibre:
+        icon: calibre
+        href: http://calibre.home.neumanf.com
+        container: calibre
 - Automation:
     - Home Assistant:
         icon: home-assistant
         href: http://homeassistant.home.neumanf.com
         container: homeassistant
+    - N8N:
+        icon: n8n
+        href: http://n8n.home.neumanf.com
+        container: n8n
 - Utilities:
     - qBittorrent:
         icon: qbittorrent

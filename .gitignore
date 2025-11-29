@@ -9,3 +9,6 @@ affine/storage
 homeassistant/config
 filebrowser/config
 filebrowser/database
+calibre/books
+calibre/data
+n8n/local-files
