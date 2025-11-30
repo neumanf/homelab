@@ -27,7 +27,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.affine.rule=Host(`affine.home.neumanf.com`)
-      - traefik.http.routers.affine.entrypoints=web
+      - traefik.http.routers.affine.entrypoints=https
+      - traefik.http.routers.affine.tls=true
       - traefik.http.services.affine.loadbalancer.server.port=3010
 
   affine_migration:

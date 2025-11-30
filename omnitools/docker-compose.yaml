@@ -8,7 +8,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.omnitools.rule=Host(`omnitools.home.neumanf.com`)
-      - traefik.http.routers.omnitools.entrypoints=web
+      - traefik.http.routers.omnitools.entrypoints=https
+      - traefik.http.routers.omnitools.tls=true
       - traefik.http.services.omnitools.loadbalancer.server.port=80
 networks:
   traefik:

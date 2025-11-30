@@ -5,91 +5,91 @@
 - Files:
     - Next Cloud:
         icon: nextcloud
-        href: http://nextcloud.home.neumanf.com
+        href: https://nextcloud.home.neumanf.com
         container: nextcloud
     - Affine:
         icon: affine
-        href: http://affine.home.neumanf.com
+        href: https://affine.home.neumanf.com
         container: affine_server
 - Media:
     - Jellyfin:
         icon: jellyfin
-        href: http://jellyfin.home.neumanf.com
+        href: https://jellyfin.home.neumanf.com
         container: jellyfin
         widget:
           type: jellyfin
-          url: http://jellyfin.home.neumanf.com
+          url: https://jellyfin.home.neumanf.com
           key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
     - Jellyseerr:
         icon: jellyseerr
-        href: http://jellyseerr.home.neumanf.com
+        href: https://jellyseerr.home.neumanf.com
         container: jellyseerr
         widget:
           type: jellyseerr
-          url: http://jellyseerr.home.neumanf.com
+          url: https://jellyseerr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_JELLYSEERR_KEY}}"
     - Sonarr:
         icon: sonarr
-        href: http://sonarr.home.neumanf.com
+        href: https://sonarr.home.neumanf.com
         container: sonarr
         widget:
           type: sonarr
-          url: http://sonarr.home.neumanf.com
+          url: https://sonarr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_SONARR_KEY}}"
     - Radarr:
         icon: radarr
-        href: http://radarr.home.neumanf.com
+        href: https://radarr.home.neumanf.com
         container: radarr
         widget:
           type: radarr
-          url: http://radarr.home.neumanf.com
+          url: https://radarr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_RADARR_KEY}}"
     - Prowllar:
         icon: prowlarr
-        href: http://prowlarr.home.neumanf.com
+        href: https://prowlarr.home.neumanf.com
         container: prowlarr
         widget:
           type: prowlarr
-          url: http://prowlarr.home.neumanf.com
+          url: https://prowlarr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_PROWLARR_KEY}}"
     - Calibre:
         icon: calibre
-        href: http://calibre.home.neumanf.com
+        href: https://calibre.home.neumanf.com
         container: calibre
 - Automation:
     - Home Assistant:
         icon: home-assistant
-        href: http://homeassistant.home.neumanf.com
+        href: https://homeassistant.home.neumanf.com
         container: homeassistant
     - N8N:
         icon: n8n
-        href: http://n8n.home.neumanf.com
+        href: https://n8n.home.neumanf.com
         container: n8n
 - Utilities:
     - qBittorrent:
         icon: qbittorrent
-        href: http://qbittorrent.home.neumanf.com
+        href: https://qbittorrent.home.neumanf.com
         container: qbittorrent
         widget:
           type: qbittorrent
-          url: http://qbittorrent.home.neumanf.com
+          url: https://qbittorrent.home.neumanf.com
           username: "{{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}"
           password: "{{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}"
     - File browser:
         icon: filebrowser
-        href: http://filebrowser.home.neumanf.com
+        href: https://filebrowser.home.neumanf.com
         container: filebrowser
     - File conversion:
         icon: si-convertio
-        href: http://vert.home.neumanf.com
+        href: https://vert.home.neumanf.com
         container: vert
     - Tools:
         icon: omni-tools 
-        href: http://omnitools.home.neumanf.com
+        href: https://omnitools.home.neumanf.com
         container: omni-tools
     - Adguard:
         icon: adguard-home 
-        href: http://minipc.intelbras.local:3000
+        href: https://minipc.intelbras.local:3000
         container: adguard 
 - Calendar:
     - Month:

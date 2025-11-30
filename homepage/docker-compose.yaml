@@ -10,8 +10,9 @@ services:
       - traefik
     labels:
       - traefik.enable=true
-      - traefik.http.routers.homepage.rule=Host(`homepage.home.neumanf.com`) || Host(`homepage.minipc`)
-      - traefik.http.routers.homepage.entrypoints=web
+      - traefik.http.routers.homepage.rule=Host(`homepage.home.neumanf.com`)
+      - traefik.http.routers.homepage.entrypoints=https
+      - traefik.http.routers.homepage.tls=true
       - traefik.http.services.homepage.loadbalancer.server.port=3000
     environment:
       HOMEPAGE_ALLOWED_HOSTS: homepage.home.neumanf.com
