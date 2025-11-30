@@ -9,6 +9,8 @@ affine/storage
 homeassistant/config
 filebrowser/config
 filebrowser/database
-calibre/books
-calibre/data
+booklore/books
+booklore/data
+booklore/bookdrop
+booklore/mariadb
 n8n/local-files

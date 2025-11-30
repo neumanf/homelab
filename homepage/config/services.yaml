@@ -52,10 +52,11 @@
           type: prowlarr
           url: https://prowlarr.home.neumanf.com
           key: "{{HOMEPAGE_VAR_PROWLARR_KEY}}"
-    - Calibre:
-        icon: calibre
-        href: https://calibre.home.neumanf.com
-        container: calibre
+- Reading:
+    - Booklore:
+        icon: mdi-book-open-variant-outline
+        href: https://booklore.home.neumanf.com
+        container: booklore
 - Automation:
     - Home Assistant:
         icon: home-assistant
@@ -84,24 +85,24 @@
         href: https://vert.home.neumanf.com
         container: vert
     - Tools:
-        icon: omni-tools 
+        icon: omni-tools
         href: https://omnitools.home.neumanf.com
         container: omni-tools
     - Adguard:
-        icon: adguard-home 
+        icon: adguard-home
         href: https://minipc.intelbras.local:3000
-        container: adguard 
+        container: adguard
 - Calendar:
     - Month:
         widget:
           type: calendar
-          integrations: 
+          integrations:
             - type: sonarr
-              service_group: Media 
+              service_group: Media
               service_name: Sonarr
               color: teal
             - type: radarr
-              service_group: Media 
+              service_group: Media
               service_name: Radarr
               color: blue
 - Agenda:
@@ -109,12 +110,12 @@
         widget:
           type: calendar
           view: agenda
-          integrations: 
+          integrations:
             - type: sonarr
-              service_group: Media 
+              service_group: Media
               service_name: Sonarr
               color: teal
             - type: radarr
-              service_group: Media 
+              service_group: Media
               service_name: Radarr
               color: blue
