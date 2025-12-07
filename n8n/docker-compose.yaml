@@ -9,6 +9,11 @@ services:
       - traefik.http.routers.n8n.entrypoints=https
       - traefik.http.routers.n8n.tls=true
       - traefik.http.services.n8n.loadbalancer.server.port=5678
+      - glance.name=N8N
+      - glance.icon=sh:n8n
+      - glance.url=https://n8n.home.neumanf.com
+      - glance.id=n8n
+      - glance.category=automation
     networks:
       - traefik
     environment:

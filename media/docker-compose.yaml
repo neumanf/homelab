@@ -27,6 +27,10 @@ services:
       - traefik.http.routers.qbittorrent.entrypoints=https
       - traefik.http.routers.qbittorrent.tls=true
       - traefik.http.services.qbittorrent.loadbalancer.server.port=8081
+      - glance.name=Gluetun
+      - glance.icon=sh:gluetun
+      - glance.id=gluetun
+      - glance.category=network
 
   qbittorrent:
     container_name: qbittorrent
@@ -44,6 +48,12 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
+    labels:
+      - glance.name=qBitTorrent
+      - glance.icon=sh:qbittorrent
+      - glance.url=https://qbittorrent.home.neumanf.com
+      - glance.id=qbittorrent
+      - glance.category=media
 
   radarr:
     container_name: radarr
@@ -64,6 +74,11 @@ services:
       - traefik.http.routers.radarr.entrypoints=https
       - traefik.http.routers.radarr.tls=true
       - traefik.http.services.radarr.loadbalancer.server.port=7878
+      - glance.name=Radarr
+      - glance.icon=sh:radarr
+      - glance.url=https://radarr.home.neumanf.com
+      - glance.id=radarr
+      - glance.category=media
 
   sonarr:
     container_name: sonarr
@@ -84,7 +99,12 @@ services:
       - traefik.http.routers.sonarr.entrypoints=https
       - traefik.http.routers.sonarr.tls=true
       - traefik.http.services.sonarr.loadbalancer.server.port=8989
-  
+      - glance.name=Sonarr
+      - glance.icon=sh:sonarr
+      - glance.url=https://sonarr.home.neumanf.com
+      - glance.id=sonarr
+      - glance.category=media
+
   prowlarr:
     container_name: prowlarr
     image: binhex/arch-prowlarr
@@ -103,7 +123,11 @@ services:
       - traefik.http.routers.prowlarr.entrypoints=https
       - traefik.http.routers.prowlarr.tls=true
       - traefik.http.services.prowlarr.loadbalancer.server.port=9696
-  
+      - glance.name=Prowlarr
+      - glance.icon=sh:prowlarr
+      - glance.url=https://prowlarr.home.neumanf.com
+      - glance.id=prowlarr
+      - glance.category=media
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin
@@ -122,7 +146,11 @@ services:
       - traefik.http.routers.jellyfin.entrypoints=https
       - traefik.http.routers.jellyfin.tls=true
       - traefik.http.services.jellyfin.loadbalancer.server.port=8096
-  
+      - glance.name=Jellyfin
+      - glance.icon=sh:jellyfin
+      - glance.url=https://jellyfin.home.neumanf.com
+      - glance.id=jellyfin
+      - glance.category=media
   jellyseerr:
     container_name: jellyseerr
     image: fallenbagel/jellyseerr:latest
@@ -139,7 +167,11 @@ services:
       - traefik.http.routers.jellyseerr.entrypoints=https
       - traefik.http.routers.jellyseerr.tls=true
       - traefik.http.services.jellyseerr.loadbalancer.server.port=5055
-
+      - glance.name=Jellyseerr
+      - glance.icon=sh:jellyseerr
+      - glance.url=https://jellyseerr.home.neumanf.com
+      - glance.id=jellyseerr
+      - glance.category=media
 networks:
   traefik:
     external: true

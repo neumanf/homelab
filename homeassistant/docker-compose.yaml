@@ -16,6 +16,11 @@ services:
       - traefik.http.routers.homeassistant.entrypoints=https
       - traefik.http.routers.homeassistant.tls=true
       - traefik.http.services.homeassistant.loadbalancer.server.port=8123
+      - glance.name=Home Assistant
+      - glance.icon=sh:home-assistant
+      - glance.url=https://homeassistant.home.neumanf.com
+      - glance.id=homeassistant
+      - glance.category=automation
 networks:
   traefik:
     external: true

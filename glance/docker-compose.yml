@@ -1,0 +1,24 @@
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config
+      - ./assets:/app/assets
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    env_file: .env
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.glance.rule=Host(`glance.home.neumanf.com`)
+      - traefik.http.routers.glance.entrypoints=https
+      - traefik.http.routers.glance.tls=true
+      - traefik.http.services.glance.loadbalancer.server.port=8080
+      - glance.hide=true
+
+networks:
+  traefik:
+    external: true

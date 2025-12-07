@@ -26,6 +26,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=home.neumanf.com"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.home.neumanf.com"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+      - glance.hide=true
 networks:
   traefik:
     external: true

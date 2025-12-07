@@ -1,0 +1,29 @@
+- name: Home
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  # hide-desktop-navigation: true
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: sunday
+
+    - size: full
+      widgets:
+        - type: docker-containers
+          title: Media
+          category: media
+        - type: docker-containers
+          title: Reading
+          category: reading
+        - type: docker-containers
+          title: Documents
+          category: documents
+        - type: docker-containers
+          title: Automation
+          category: automation
+        - type: docker-containers
+          title: Network
+          category: network
+        - type: docker-containers
+          title: Utilities
+          category: utilities

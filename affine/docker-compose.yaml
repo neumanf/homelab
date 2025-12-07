@@ -30,6 +30,11 @@ services:
       - traefik.http.routers.affine.entrypoints=https
       - traefik.http.routers.affine.tls=true
       - traefik.http.services.affine.loadbalancer.server.port=3010
+      - glance.name=Affine
+      - glance.icon=sh:affine
+      - glance.url=https://affine.home.neumanf.com
+      - glance.id=affine
+      - glance.category=documents
 
   affine_migration:
     image: ghcr.io/toeverything/affine-graphql:${AFFINE_REVISION:-stable}
@@ -51,6 +56,9 @@ services:
         condition: service_healthy
     networks:
       - traefik
+    labels:
+      - glance.parent=affine
+      - glance.name=Migration
 
   redis:
     image: redis
@@ -63,6 +71,9 @@ services:
     restart: unless-stopped
     networks:
       - traefik
+    labels:
+      - glance.parent=affine
+      - glance.name=Redis
 
   postgres:
     image: postgres:16
@@ -86,6 +97,9 @@ services:
     restart: unless-stopped
     networks:
       - traefik
+    labels:
+      - glance.parent=affine
+      - glance.name=Postgres
 
 networks:
   traefik:

@@ -6,6 +6,10 @@ services:
     network_mode: host
     volumes:
       - adguard:/opt/adguardhome
-
+    labels:
+      glance.name: Adguard
+      glance.icon: sh:adguard-home
+      glance.url: http://minipc.intelbras.local:3000
+      glance.category: network
 volumes:
   adguard:

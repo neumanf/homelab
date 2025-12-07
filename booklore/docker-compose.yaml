@@ -26,6 +26,11 @@ services:
       - traefik.http.routers.booklore.entrypoints=https
       - traefik.http.routers.booklore.tls=true
       - traefik.http.services.booklore.loadbalancer.server.port=6060
+      - glance.name=Booklore
+      - glance.icon=sh:booklore
+      - glance.url=https://booklore.home.neumanf.com
+      - glance.id=booklore
+      - glance.category=reading
 
   mariadb:
     image: lscr.io/linuxserver/mariadb:11.4.5
@@ -48,6 +53,9 @@ services:
       retries: 10
     networks:
       - traefik
+    labels:
+      - glance.parent=booklore
+      - glance.name=MariaDB
 
 networks:
   traefik:
